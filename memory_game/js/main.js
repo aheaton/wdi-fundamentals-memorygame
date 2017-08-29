@@ -59,5 +59,13 @@ var createBoard = function (){
 	}
 };
 
+//when the Reset Game button is clicked, the board will be created from scratch
+var resetGame = function (){
+		var clearBoard = document.getElementById('game-board');
+		clearBoard.innerHTML = '';
+		createBoard();
+};
+
+
 createBoard();
 
