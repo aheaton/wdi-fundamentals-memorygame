@@ -24,15 +24,13 @@ var cardsInPlay = [];
 
 
 //function for showing the front of the clicked card and checking if the two cards match
-var checkForMatch = function (cardId){
-	if (cardsInPlay.length===2){
+var checkForMatch = function (){
 		if (cardsInPlay[0]===cardsInPlay[1]) {
 			alert("You found a match!");
 		}
 		else{
 			alert("Sorry, try again.");
-		}
-	}
+		}	
 };
 
 //function for getting the ID of the clicked card and adding the flipped card to the array
@@ -43,9 +41,12 @@ var flipCard = function (){
 	console.log(cards[cardId].suit);
 	cardsInPlay.push(cards[cardId].rank);
 	this['src'] = cards[cardId].cardImage;
-
-	checkForMatch(cardId);
+	if (cardsInPlay.length===2){
+		checkForMatch();
+		cardsInPlay = [];
+	}
 };
+
 
 //function for creating board with cards and settting up click event listener
 var createBoard = function (){
