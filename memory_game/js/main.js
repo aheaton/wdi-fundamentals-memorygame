@@ -23,7 +23,7 @@ cardImage: "images/king-of-diamonds.png"
 var cardsInPlay = [];
 
 
-//function for showing the front of the clicked card and checking if the two cards match
+//function for checking if the two cards match
 var checkForMatch = function (){
 		if (cardsInPlay[0]===cardsInPlay[1]) {
 			alert("You found a match!");
@@ -33,7 +33,7 @@ var checkForMatch = function (){
 		}	
 };
 
-//function for getting the ID of the clicked card and adding the flipped card to the array
+//function for getting the ID of the clicked card, adding the clicked card to the array, & flipping the card
 var flipCard = function (){
 	var cardId = this.getAttribute('data-id');
 	console.log("User flipped " + cards[cardId].rank);
