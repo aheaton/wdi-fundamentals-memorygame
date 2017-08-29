@@ -25,7 +25,6 @@ var cardsInPlay = [];
 
 //function for showing the front of the clicked card and checking if the two cards match
 var checkForMatch = function (cardId){
-	this['src'] = cards[cardId].cardImage;
 	if (cardsInPlay.length===2){
 		if (cardsInPlay[0]===cardsInPlay[1]) {
 			alert("You found a match!");
@@ -43,6 +42,7 @@ var flipCard = function (){
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
 	cardsInPlay.push(cards[cardId].rank);
+	this['src'] = cards[cardId].cardImage;
 
 	checkForMatch(cardId);
 };
